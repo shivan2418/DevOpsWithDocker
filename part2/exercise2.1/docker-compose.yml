@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  simple_web_service:
+    image: devopsdockeruh/simple-web-service
+    build: .
+    volumes:
+      - "$PWD/text.log:/usr/src/app/text.log"
+    container_name: dockerized_simple_web_service
+ 
+

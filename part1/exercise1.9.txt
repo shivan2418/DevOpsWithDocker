@@ -1,0 +1,1 @@
+touch text.log && docker run -v /mnt/mint2/Documents/Programming/Courses/DevOpsWithDocker/part1/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service

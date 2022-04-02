@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+    frontend:
+        build: ../exercise2.7/ml-kurkkumopo-frontend
+        ports:
+            - "3000:3000"
+        networks:
+            - database-network # Name in this docker-compose file
+
+    backend:
+        build: ../exercise2.7/ml-kurkkumopo-backend
+        volumes:
+            - ../exercise2.7/src/model/:/src/model         
+        ports:
+            - "5000:5000"
+        depends_on: 
+           - training
+        networks:
+           - database-network # Name in this docker-compose file
+
+    training:
+        build: ../exercise2.7/ml-kurkkumopo-training
+        volumes:
+            - ../exercise2.7/src/model/:/src/model    
+    nginx:
+        image: nginx
+        depends_on: 
+           - backend
+           - frontend
+        ports:
+            - "80:80"
+        volumes:
+            - ${PWD}/nginx.conf:/etc/nginx/nginx.conf
+        networks:
+            - database-network # Name in this docker-compose file
+        
+
+networks:
+  database-network: # Name in this docker-compose file
+    name: database-network # Name that will be the actual name of the network
+

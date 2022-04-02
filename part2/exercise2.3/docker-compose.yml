@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+    example_frontend:
+       build:
+        context: ../../part1/exercise 1.12
+       ports:
+        - "5000:5000"
+       environment:
+        - REACT_APP_BACKEND_URL=http://localhost:8080
+    example_backend:
+        build:
+         context: ../../part1/exercise 1.13
+        ports:
+        - "8080:8080"
+        environment:
+         - REQUEST_ORIGIN=http://localhost:5000
+

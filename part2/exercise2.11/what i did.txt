@@ -1,0 +1,7 @@
+I had a python scraper project lying around from two years ago. 
+So I thought it would be useful to be able to develop on an older version of python.
+
+I originally had a 2.5GB zip file in this folder that I deleted since this has to be uploaded. But I utilzied .dockerignore to keep the local venv and that huge file out of the context. 
+The docker-compose file mounts the current dir to /app.
+ 
+

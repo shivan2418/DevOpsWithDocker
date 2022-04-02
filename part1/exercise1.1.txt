@@ -1,0 +1,6 @@
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+8c9a183b488d   nginx              "/docker-entrypoint.…"   34 seconds ago   Up 34 seconds   80/tcp                                      n3
+a7779e712fab   nginx              "/docker-entrypoint.…"   37 seconds ago   Up 36 seconds   80/tcp                                      n2
+ee1c4230db2b   nginx              "/docker-entrypoint.…"   40 seconds ago   Up 39 seconds   80/tcp                                      n1
+69ad98d90859   postgres:10.13     "docker-entrypoint.s…"   11 days ago      Up 5 hours      0.0.0.0:5432->5432/tcp, :::5432->5432/tcp   server_db_1
+530888d20327   rocker/tidyverse   "/init"                  2 months ago     Up 5 hours      0.0.0.0:8787->8787/tcp, :::8787->8787/tcp   rstudio

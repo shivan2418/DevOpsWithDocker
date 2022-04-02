@@ -1,0 +1,3 @@
+I basically did exercise 2.8 to 2.10 together as one big docker-compose file. I wanted to get everything worked at once.
+
+I changed the ports of example_frontend and example_backend in the nginx.conf file. 

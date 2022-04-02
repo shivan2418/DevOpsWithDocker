@@ -1,0 +1,31 @@
+services: 
+  database: 
+    image: postgres:14.2-alpine
+    environment:
+      - "POSTGRES_PASSWORD=postgres"
+
+  example_backend: 
+    build: 
+      context: "../../part1/exercise 1.13"
+    environment: 
+      - "REQUEST_ORIGIN=http://localhost:5000"
+      - "POSTGRES_HOST=database"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+      - "POSTGRES_DATABASE=postgres"
+      - "REDIS_HOST=redis"
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - database
+  example_frontend: 
+    build: 
+      context: "../../part1/exercise 1.12"
+    environment: 
+      - "REACT_APP_BACKEND_URL=http://localhost:8080"
+    ports: 
+      - "5000:5000"
+  redis:
+    image: redis:7.0-rc-alpine
+    restart: unless-stopped
+

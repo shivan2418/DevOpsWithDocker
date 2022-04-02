@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  python:
+    build: .
+    environment:
+    - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app

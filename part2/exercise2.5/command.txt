@@ -1,0 +1,1 @@
+docker-compose -f ./scaling-exercise/docker-compose.yml up -d --scale compute=3

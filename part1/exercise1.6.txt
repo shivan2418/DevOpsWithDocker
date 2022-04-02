@@ -1,0 +1,5 @@
+docker run -it devopsdockeruh/pull_exercise
+*visit docker hub*
+basics
+>"This is the secret message"
+

@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+    simple_web_service:
+        image: devopsdockeruh/simple-web-service
+        build: .
+        ports:
+            - "8080:8080"
+        command: ['server']
